@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class Cliente {
         @Id
         @GeneratedValue(strategy = GenerationType.SEQUENCE)
-        private String idCliente;
+        private Long idCliente;
 
         private String ragioneSociale;
         private String partitaIva;

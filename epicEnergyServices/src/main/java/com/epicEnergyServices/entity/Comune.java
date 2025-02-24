@@ -1,8 +1,6 @@
 package com.epicEnergyServices.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Comune {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Genera automaticamente l'ID
+    private Long idComune;
+
     private String codiceProvincia;
     private String progressivoComune;
     private String nomeComune;

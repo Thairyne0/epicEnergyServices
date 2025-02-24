@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IndirizzoRepository extends JpaRepository<Indirizzo, Long>{
-    Indirizzo findbyCapLocalita(String cap, Provincia localita);
+
 }

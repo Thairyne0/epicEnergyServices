@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Utente {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private String idUtente;
+    private Long idUtente;
 
     private String username;
     private String email;

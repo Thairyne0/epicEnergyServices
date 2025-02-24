@@ -28,6 +28,6 @@ public class FatturaRequest {
     private String numeroFattura;
 
     @NotNull(message = "Customer ID is required")
-    private Long idCliente;
+    private Cliente idCliente;
 
 }

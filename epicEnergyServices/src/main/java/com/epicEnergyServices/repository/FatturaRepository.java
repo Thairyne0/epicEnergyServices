@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FatturaRepository extends JpaRepository<Fattura, Long> {
-    Fattura findByNumeroFattura(Long numeroFattura);
+
 }

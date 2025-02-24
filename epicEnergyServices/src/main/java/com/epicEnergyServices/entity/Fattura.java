@@ -21,7 +21,7 @@ public class Fattura {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private String numeroFattura;
+    private Long numeroFattura;
 
     @ManyToOne
     private Cliente idCliente;
