@@ -1,13 +1,12 @@
 package com.epicEnergyServices.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "fatture")
@@ -16,14 +15,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Fattura {
 
-    private String data;
+    private LocalDate data;
     private String importo;
-    private String stato;
+    private StatoFattura stato;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private String numeroFattura;
 
     @ManyToOne
-    private String idCliente;
+    private Cliente idCliente;
 
 }
+
