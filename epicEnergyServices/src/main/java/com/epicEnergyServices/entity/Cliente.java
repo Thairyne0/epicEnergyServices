@@ -31,4 +31,8 @@ public class Cliente {
         private String cognomeContatto;
         private String telefonoContatto;
         private String logoAziendale;
+        @ManyToOne
+        private Indirizzo indirizzoSedeLegale;
+        @ManyToOne
+        private Indirizzo indirizzoSedeOperativa;
 }
