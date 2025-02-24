@@ -1,8 +1,6 @@
 package com.epicEnergyServices.entity;
 
-
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -10,20 +8,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "fatture")
+@Table(name = "comuni")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Fattura {
-
-    private String data;
-    private String importo;
-    private String stato;
-
-    @Id
-    private String numeroFattura;
+public class Comune {
+    private String codiceProvincia;
+    private String progressivoComune;
+    private String nomeComune;
 
     @ManyToOne
-    private String idCliente;
-
+    private Provincia provincia;
 }

@@ -2,6 +2,7 @@ package com.epicEnergyServices.entity;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +16,11 @@ import lombok.NoArgsConstructor;
 public class Indirizzo {
     private String via;
     private String civico;
-    private String localita;
     private String cap;
-    private String comune;
+
+    @ManyToOne
+    private Provincia localita;
+
+    @ManyToOne
+    private Comune comune;
 }
