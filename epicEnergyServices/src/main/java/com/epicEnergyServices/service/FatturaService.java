@@ -23,14 +23,14 @@ public class FatturaService {
     private ClienteRepository clienteRepository;
 
     @Transactional
-    public CreateResponse creaFattura(@Valid FatturaRequest fatturaRequest) {
+    public Fattura creaFattura(@Valid FatturaRequest fatturaRequest) {
         Fattura fattura = new Fattura();
         Cliente cliente = clienteRepository.findById(fatturaRequest.getIdCliente())
                 .orElseThrow(() -> new RuntimeException("Cliente non trovato"));
         BeanUtils.copyProperties(fatturaRequest, fattura);
         fattura.setIdCliente(cliente);
         fatturaRepository.save(fattura);
-        return new CreateResponse(fattura.getNumeroFattura());
+        return fattura;
     }
 
 
