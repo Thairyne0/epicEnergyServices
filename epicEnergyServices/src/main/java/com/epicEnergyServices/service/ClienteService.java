@@ -17,11 +17,11 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
     @Transactional
-    public CreateResponse creaCliente(@Valid ClienteRequest clienteRequest) {
+    public Cliente creaCliente(@Valid ClienteRequest clienteRequest) {
 
         Cliente cliente = new Cliente();
         BeanUtils.copyProperties(clienteRequest, cliente);
         clienteRepository.save(cliente);
-        return new CreateResponse(cliente.getIdCliente());
+        return cliente;
     }
 }

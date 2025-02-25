@@ -33,6 +33,7 @@ public class ClienteController {
     public ResponseEntity<Cliente> creaCliente(@RequestBody ClienteRequest clienteRequest) {
         Cliente nuovoCliente = clienteService.creaCliente(clienteRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuovoCliente);
+
     }
 }
 
