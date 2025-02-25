@@ -21,7 +21,7 @@ public class UtenteService {
         Utente utente = new Utente();
         BeanUtils.copyProperties(utenteRequest, utente);
         utenteRepository.save(utente);
-        return utente;
+        return new CreateResponse(utente.getIdUtente());
     }
 
 }
