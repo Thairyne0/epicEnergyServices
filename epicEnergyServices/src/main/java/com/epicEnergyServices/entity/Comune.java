@@ -1,24 +1,24 @@
 package com.epicEnergyServices.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "comuni")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class Comune {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Genera automaticamente l'ID
-    private Long idComune;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String codiceProvincia;
     private String progressivoComune;
     private String nomeComune;
-
-    @ManyToOne
-    private Provincia provincia;
+    private String siglaProvincia;
 }
